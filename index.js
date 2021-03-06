@@ -122,7 +122,7 @@ module.exports = (url, options = {}) => {
   }
   else if (isHTTPS) {
     // Set up the https agent if no proxy and https
-    options.agent = new Agent({
+    init.agent = new Agent({
       rejectUnauthorized,
     });
   }
