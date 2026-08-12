@@ -120,6 +120,10 @@ module.exports = (url, options = {}) => {
       rejectUnauthorized,
     });
   }
+  // Allow passing a custom agent for https
+  else if (options.agent) {
+    init.agent = options.agent;
+  }
   else if (isHTTPS) {
     // Set up the https agent if no proxy and https
     init.agent = new Agent({
